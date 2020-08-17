@@ -1,0 +1,14 @@
+.talk {
+    background-color: $color-white;
+    padding: 100px 0;
+    text-align: center;
+
+    @include breakpoint(medium down) {
+        padding: 50px 0;
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        max-width: 540px;
+    }
+}

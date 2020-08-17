@@ -1,0 +1,123 @@
+.contacts {
+    padding: 10rem 0;
+
+    @include breakpoint(medium down) {
+        padding: 5rem 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-bottom: 10rem;
+
+        @include breakpoint(medium down) {
+            margin-bottom: 5rem;
+        }
+
+        @include breakpoint(small down) {
+            flex-direction: column;
+        }
+    }
+
+    &__info {
+        padding-right: 20rem;
+        width: calc(100% - 67rem);
+
+        @include breakpoint(medium down) {
+            padding-right: 4rem;
+            width: 50%;
+        }
+
+        @include breakpoint(small down) {
+            margin-bottom: 3rem;
+            padding-right: 0;
+            width: 100%;
+        }
+    }
+
+    &__listitems {
+        margin-top: 3.5rem;
+        font-style: normal;
+    }
+
+    &__item {
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+    &__form {
+        width: 67rem;
+
+        @include breakpoint(medium down) {
+            width: 50%;
+        }
+
+        @include breakpoint(small down) {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    &__fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__fields {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -1rem;
+    }
+
+    &__field {
+        margin: 0 1rem 2rem;
+        width: 100%;
+
+        &:first-child,
+        &:nth-child(2){
+            width: calc(50% - 2rem);
+        }
+
+        input,
+        textarea {
+            background-color: $color-white;
+            border: 0;
+            color: lighten($color-black, 28.63);
+            font-family: $typo-1;
+            font-size: 1.6rem;
+            padding: 1rem 2rem;
+            width: 100%;
+
+            @include breakpoint(small down) {
+                font-size: 1.4rem;
+            }
+
+            &::placeholder {
+                color: lighten($color-black, 47.06);
+            }
+        }
+
+        input {
+            height: 4.9rem;
+        }
+
+        textarea {
+            height: 17rem;
+            resize: vertical;
+
+            @include breakpoint(small down) {
+                height: 12rem;
+            }
+        }
+    }
+
+    &__btn {
+        margin: 0;
+    }
+
+    &__map {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+}

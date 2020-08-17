@@ -1,0 +1,9 @@
+{% from 'components/_pager.njk' import pager %}
+
+{% set title = 'Project details' %}
+{% extends 'layouts/_layout.njk' %}
+
+{% block content %}
+    {% include 'components/_project.njk' %}
+    {{ pager() }}
+{% endblock %}

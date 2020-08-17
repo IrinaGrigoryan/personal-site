@@ -1,0 +1,64 @@
+.gallery {
+    $this: &;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        width: 25%;
+
+        @include breakpoint(medium down) {
+            width: 50%;
+        }
+
+        @include breakpoint(xsmall down) {
+            width: 100%;
+        }
+    }
+
+    &__link {
+        @include on-event() {
+            #{$this}__picture {
+                &::before,
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__picture {
+        display: block;
+        position: relative;
+
+        &::before {
+            @include absolute(0, 0, 0, 0);
+            @include size(100%);
+            background-color: rgba($color-1--1, 0.85);
+            content: '';
+            opacity: 0;
+            transition: all 250ms ease-in-out;
+        }
+
+        &::after {
+            @include absolute(50%, null, null, 50%);
+            color: $color-white;
+            content: '\f06e';
+            font-family: $font-awesome;
+            font-size: 3rem;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: all 250ms ease-in-out;
+        }
+
+        img {
+            @include size(100%);
+            display: block;
+        }
+    }
+}

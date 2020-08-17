@@ -1,0 +1,125 @@
+.pager {
+    background-color: $color-white;
+    padding: 4.4rem 0;
+
+    @include breakpoint(small down) {
+        padding: 3rem 0;
+    }
+
+    &__listitems {
+        background-color: $color-white;
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    &__item {
+        display: inline-block;
+
+        a,
+        span {
+            color: lighten($color-black, 11.37);
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 250ms ease-in-out;
+
+            @include breakpoint(small down) {
+                line-height: 1.4;
+                text-indent: -9999px;
+                white-space: nowrap;
+            }
+
+            &::before {
+                font-family: $font-awesome;
+                font-size: 1.4rem;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: transform 250ms ease-in-out;
+
+                @include breakpoint(small down) {
+                    font-size: 3rem;
+                    text-indent: 0;
+                    top: 50%;
+                    transform: translateY(-50%) translateX(-50%);
+                }
+            }
+        }
+
+        a {
+            @include on-event() {
+                color: $color-1--1;
+
+                @include breakpoint(medium) {
+                    &::before {
+                        transform: translateY(-50%) translateX(0.3rem);
+                    }
+                }
+            }
+        }
+
+        span {
+            color: lighten($color-black, 47.06)
+        }
+
+        &.-prev {
+            float: left;
+
+            a,
+            span {
+                padding-left: 2rem;
+
+                &::before {
+                    content: '\f104';
+                    left: 0;
+
+                    @include breakpoint(small down) {
+                        left: 50%;
+                    }
+                }
+            }
+        }
+
+        &.-next {
+            float: right;
+
+            a,
+            span {
+                padding-right: 2rem;
+                text-transform: uppercase;
+
+                &::before {
+                    content: '\f105';
+                    right: 0;
+
+                    @include breakpoint(small down) {
+                        left: 50%;
+                    }
+                }
+            }
+        }
+
+        &.-return {
+            a {
+                &::before {
+                    content: '\f009';
+                    font-family: $font-awesome;
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    transform: translate(-50%, -60%);
+
+                    @include breakpoint(small down) {
+                        left: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

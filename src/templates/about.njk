@@ -1,0 +1,10 @@
+{% set title = 'About' %}
+{% set bodyClass = 'about-page' %}
+{% extends 'layouts/_layout.njk' %}
+
+{% block content %}
+    {% include 'components/_intro.njk' %}
+    {% include 'components/_statistics.njk' %}
+    {% include 'components/_about.njk' %}
+    {% include 'components/_talk.njk' %}
+{% endblock %}

@@ -1,0 +1,45 @@
+.header {
+    &__wrap {
+        background-color: $color-white;
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+    }
+    &__container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 3.5rem 1rem;
+
+        @include breakpoint(medium down) {
+            padding: 3.5rem 2rem;
+        }
+
+        @include breakpoint(small down) {
+            padding: 2rem;
+        }
+    }
+
+    &__logo {
+        a {
+            display: block;
+        }
+
+        img {
+            display: block;
+            width: 4rem;
+        }
+    }
+
+    &__fixed {
+        padding-top: 10.55rem;
+
+        @include breakpoint(medium down) {
+            padding-top: 10.8rem;
+        }
+
+        @include breakpoint(small down) {
+            padding-top: 7.8rem;
+        }
+    }
+}

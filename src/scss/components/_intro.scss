@@ -1,0 +1,72 @@
+.intro {
+    padding: 9rem 0;
+    position: relative;
+    $this: &;
+
+    @include breakpoint(medium down) {
+        padding: 7rem 0;
+    }
+
+    @include breakpoint(small down) {
+        padding: 5rem 0;
+    }
+
+    .about-page & {
+        background-color: lighten($color-black, 7.84);
+
+        @include breakpoint(large) {
+            padding: 11rem 0;
+        }
+
+        &::before {
+            @include absolute(0, 0, 0, 0);
+            @include size(100%);
+            background-image: url('../images/iam3.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            content: '';
+        }
+
+        &::after {
+            @include absolute(0, 0, 0, 0);
+            @include size(100%);
+            background-color: rgba($color-black, 0.6);
+            content: '';
+        }
+
+        #{$this}__wrap,
+        #{$this}__subtitle {
+            color: $color-white;
+        }
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__wrap {
+        margin: 0 auto;
+        max-width: 57rem;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 3.8rem;
+        margin: 0 0 2rem;
+        text-transform: capitalize;
+
+        @include breakpoint(small down) {
+            font-size: 3.3rem;
+        }
+    }
+
+    &__subtitle {
+        color: lighten($color-black, 28.63);
+        font-family: $typo-2;
+        font-size: 1.8rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
